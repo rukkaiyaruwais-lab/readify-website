@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Readify - Random Recommender</title>
+
+  <meta name="description" content="Pick a random book recommendation by genre and length.">
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Core JS for navigation -->
+  <script defer src="js/main.js"></script>
+  <script defer src="js/nav.js"></script>
+
+  <!-- Page specific JS -->
+  <script defer src="js/recommender.js"></script>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <h2 class="logo">Readify</h2>
+
+    <!-- Hamburger menu button -->
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" type="button">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Navigation -->
+    <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="book-explorer.html">Books</a>
+      <a href="progress-tracker.html">Progress Tracker</a>
+      <a href="recommender.html">Recommender</a>
+      <a href="reading-flow.html">Reading Flow</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <h1 class="page-title">Random Book Recommender</h1>
+  <p class="page-subtitle">Choose a genre and length, then let Readify pick a book for you.</p>
+
+  <!-- Controls -->
+  <section class="rec-card">
+
+    <div class="rec-controls">
+
+      <div class="form-row">
+        <label for="genreSelect">Genre</label>
+        <select id="genreSelect">
+          <option value="all">All</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Classic">Classic</option>
+          <option value="Romance">Romance</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="lengthSelect">Length</label>
+        <select id="lengthSelect">
+          <option value="all">All</option>
+          <option value="Short">Short (0–200 pages)</option>
+          <option value="Medium">Medium (201–400 pages)</option>
+          <option value="Long">Long (401+ pages)</option>
+        </select>
+      </div>
+
+      <div class="btn-row">
+        <button id="pickBtn" class="btn" type="button">Pick a Book</button>
+        <button id="againBtn" class="btn" type="button">Pick Again</button>
+      </div>
+
+      <p id="recMsg" class="form-msg"></p>
+
+    </div>
+
+  </section>
+
+  <!-- Recommendation Result -->
+  <section class="rec-result" id="resultBox" aria-live="polite">
+
+    <h2>Your Recommendation</h2>
+
+    <div class="rec-display">
+
+      <img id="recImg" class="rec-img" src="images/hero.jpg" alt="Book cover">
+
+      <div>
+        <h3 id="recTitle">—</h3>
+        <p><b>Author:</b> <span id="recAuthor">—</span></p>
+        <p><b>Genre:</b> <span id="recGenre">—</span></p>
+        <p><b>Pages:</b> <span id="recPages">—</span></p>
+        <p class="small-note" id="recReason">Pick a book to see details.</p>
+
+        <div class="btn-row" style="margin-top:12px;">
+          <button id="saveBtn" class="btn" type="button">Save to Reading List</button>
+          <button id="clearListBtn" class="btn" type="button">Clear List</button>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Reading List -->
+  <section class="list-card">
+    <h2>My Reading List</h2>
+
+    <ul id="readingList" class="reading-list"></ul>
+
+    <p class="small-note" id="listNote">Saved books will appear here.</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <div>
+      <h3>Readify</h3>
+      <p>Your friendly reading platform.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><br>
+      <a href="book-explorer.html">Books</a>
+    </div>
+
+    <div>
+      <h4>Tip</h4>
+      <p>Try a new genre once a month.</p>
+    </div>
+
+  </div>
+
+  <p style="text-align:center; margin-top:20px;">
+    © <span id="year"></span> Readify
+  </p>
+
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

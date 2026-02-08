@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Readify - Reading Flow</title>
+  <meta name="description" content="Cozy reading sounds + completed books tracker.">
+
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+  <script defer src="js/reading.js"></script>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <h2 class="logo">Readify</h2>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="book-explorer.html">Books</a>
+      <a href="progress-tracker.html">Progress Tracker</a>
+      <a href="recommender.html">Recommender</a>
+      <a href="reading-flow.html">Reading Flow</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1 class="page-title">Reading Flow</h1>
+  <p class="page-subtitle">Play cozy sounds and track the books you’ve completed.</p>
+
+  <section class="card" style="margin-top:18px;">
+    <h2>Cozy Sounds</h2>
+    <p class="small-note">Choose one sound at a time. Click Stop to turn off.</p>
+
+    <div class="btn-row" style="margin-top:12px; flex-wrap:wrap;">
+      <button class="btn" id="rainBtn" type="button">Rain</button>
+      <button class="btn" id="fireBtn" type="button">Fireplace</button>
+      <button class="btn" id="cafeBtn" type="button">Cafe</button>
+      <button class="btn" id="stopBtn" type="button">Stop</button>
+    </div>
+
+    <p id="soundMsg" class="form-msg" style="margin-top:10px;"></p>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <h2>Completed Books</h2>
+    <p class="small-note">Add a book you finished. It will be saved in localStorage.</p>
+
+    <form id="doneForm" style="margin-top:12px;">
+      <div class="filters" style="margin:0;">
+        <input id="doneTitle" type="text" placeholder="Book title (e.g., Sherlock Holmes)" required>
+        <input id="doneAuthor" type="text" placeholder="Author (optional)">
+      </div>
+
+      <div class="btn-row" style="margin-top:10px;">
+        <button class="btn" type="submit">Mark as Completed</button>
+        <button class="btn btn-danger" id="clearDoneBtn" type="button">Clear All</button>
+      </div>
+
+      <p id="doneMsg" class="form-msg" style="margin-top:10px;"></p>
+    </form>
+
+    <ul id="doneList" class="reading-list" style="margin-top:14px;"></ul>
+    <p id="doneNote" class="small-note">No completed books yet.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="footer-copy">© <span id="year"></span> Readify</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

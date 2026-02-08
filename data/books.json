@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Harry Potter and the Philosopher's Stone",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "image": "images/harry-potter-sorcerers-stone.png",
+    "synopsis": "A young boy discovers he is a wizard and attends Hogwarts School of Witchcraft and Wizardry.",
+    "series": ["Chamber of Secrets", "Prisoner of Azkaban"],
+    "reviews": [
+      { "platform": "Goodreads", "rating": "4.8/5", "review": "Magical and fun." },
+      { "platform": "Amazon", "rating": "4.7/5", "review": "A timeless classic." }
+    ]
+  },
+  {
+    "title": "Sherlock Holmes",
+    "author": "Arthur Conan Doyle",
+    "genre": "Mystery",
+    "image": "images/sherlock.jpg",
+    "synopsis": "Detective Sherlock Holmes solves crimes using logic and observation.",
+    "series": ["The Sign of the Four"],
+    "reviews": [
+      { "platform": "Goodreads", "rating": "4.5/5", "review": "Brilliant mystery writing." }
+    ]
+  },
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Classic",
+    "image": "images/pride%20and%20prejudice.jpg",
+    "synopsis": "A romantic novel about manners, love, and society.",
+    "series": [],
+    "reviews": [
+      { "platform": "Goodreads", "rating": "4.6/5", "review": "Beautiful storytelling." }
+    ]
+  }
+]

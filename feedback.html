@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Readify - Feedback</title>
+  <meta name="description" content="Send feedback to Readify and view FAQs.">
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ✅ Main JS for hamburger + year -->
+  <script defer src="js/main.js"></script>
+
+  <!-- ✅ Page JS -->
+  <script defer src="js/feedback.js"></script>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <h2 class="logo">Readify</h2>
+
+    <!-- ✅ SAME hamburger on ALL pages -->
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="book-explorer.html">Books</a>
+      <a href="progress-tracker.html">Progress Tracker</a>
+      <a href="recommender.html">Recommender</a>
+      <a href="reading-flow.html">Reading Flow</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1 class="page-title">Feedback</h1>
+  <p class="page-subtitle">Tell us what you think — your feedback helps us improve.</p>
+
+  <!-- Feedback Form -->
+  <section class="card">
+    <h2>Send Feedback</h2>
+    <p class="small-note">All fields are required. Your message will be saved in localStorage.</p>
+
+    <form id="feedbackForm" class="form-stack">
+      <div class="form-row-col">
+        <label for="fbName"><b>Name</b></label>
+        <input id="fbName" type="text" placeholder="Your name" autocomplete="name" />
+        <small id="nameErr" class="error-text"></small>
+      </div>
+
+      <div class="form-row-col">
+        <label for="fbEmail"><b>Email</b></label>
+        <input id="fbEmail" type="email" placeholder="you@example.com" autocomplete="email" />
+        <small id="emailErr" class="error-text"></small>
+      </div>
+
+      <div class="form-row-col">
+        <label for="fbMsg"><b>Message</b></label>
+        <textarea id="fbMsg" rows="6" placeholder="Write your feedback..."></textarea>
+        <small id="msgErr" class="error-text"></small>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn" type="submit">Submit Feedback</button>
+        <button class="btn btn-danger" id="clearFeedbackBtn" type="button">Clear Saved Feedback</button>
+      </div>
+
+      <p id="fbConfirm" class="form-msg"></p>
+    </form>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="card" style="margin-bottom:20px;">
+    <h2>FAQ</h2>
+    <p class="small-note">Click a question to expand the answer.</p>
+
+    <div class="faq">
+      <button class="faq-q" type="button">
+        How does Readify recommend books?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        Readify filters books by your selected genre and length, then randomly picks a match from the stored data.
+      </div>
+
+      <button class="faq-q" type="button">
+        Where is my reading list saved?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        Your reading list is saved in your browser using localStorage, so it stays even after refreshing.
+      </div>
+
+      <button class="faq-q" type="button">
+        Why do cozy sounds sometimes not play?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        Browsers block autoplay. Click the sound button once and it should start. Also check the MP3 path.
+      </div>
+
+      <button class="faq-q" type="button">
+        Can I remove feedback after submitting?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        Yes — use the “Clear Saved Feedback” button to remove stored feedback from localStorage.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>Readify</h3>
+      <p>Your friendly reading platform.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="book-explorer.html">Books</a><br>
+      <a href="progress-tracker.html">Progress Tracker</a>
+    </div>
+
+    <div>
+      <h4>Tip</h4>
+      <p>Small habits build big reading streaks.</p>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:20px;">
+    © <span id="year"></span> Readify
+  </p>
+</footer>
+
+</body>
+</html>

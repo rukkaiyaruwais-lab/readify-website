@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Readify - Book Explorer</title>
+  <meta name="description" content="Search and filter books, then open a modal for details.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/books.js"></script>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <h2 class="logo">Readify</h2>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="book-explorer.html">Books</a>
+      <a href="progress-tracker.html">Progress Tracker</a>
+      <a href="recommender.html">Recommender</a>
+      <a href="reading-flow.html">Reading Flow</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1 class="page-title">Book Explorer</h1>
+  <p class="page-subtitle">Find books by searching or filtering by genre.</p>
+
+  <section class="filters">
+    <input type="text" id="searchInput" placeholder="Search by title or author...">
+    <select id="genreFilter">
+      <option value="all">All Genres</option>
+    </select>
+  </section>
+
+  <p id="bookMsg" class="form-msg"></p>
+
+  <section id="bookGrid" class="book-grid"></section>
+</main>
+
+<!-- MODAL -->
+<div id="bookModal" class="modal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-label="Book details">
+    <button id="closeModal" class="close" type="button" aria-label="Close">&times;</button>
+
+    <div class="modal-top">
+      <img id="modalImg" alt="Book cover">
+      <div class="modal-meta">
+        <h2 id="modalTitle"></h2>
+        <p><b>Author:</b> <span id="modalAuthor"></span></p>
+        <p><b>Genre:</b> <span id="modalGenre"></span></p>
+      </div>
+    </div>
+
+    <h3>Synopsis</h3>
+    <p id="modalSynopsis"></p>
+
+    <h3>Sequels / Prequels</h3>
+    <ul id="modalSeries"></ul>
+
+    <h3>Ratings & Reviews</h3>
+    <table class="review-table">
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Rating</th>
+          <th>Review</th>
+        </tr>
+      </thead>
+      <tbody id="modalReviews"></tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="footer">
+  <p class="footer-copy">© <span id="year"></span> Readify</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

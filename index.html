@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Readify - Home</title>
+  <meta name="description" content="Readify helps readers discover books and track reading progress.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <h2 class="logo">Readify</h2>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="book-explorer.html">Books</a>
+      <a href="progress-tracker.html">Progress Tracker</a>
+      <a href="recommender.html">Recommender</a>
+      <a href="reading-flow.html">Reading Flow</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Make Reading Fun for Everyone</h1>
+
+      <div class="quote-box">
+        <p id="quoteText">Loading quote...</p>
+        <p id="quoteAuthor"></p>
+      </div>
+
+      <div class="btn-row">
+        <a href="book-explorer.html" class="btn">Explore Books</a>
+        <a href="progress-tracker.html" class="btn">Track Progress</a>
+      </div>
+    </div>
+
+    <div>
+      <img src="images/hero.jpg" alt="Cozy library reading scene" class="hero-img">
+    </div>
+  </section>
+
+  <section style="margin-top:10px;">
+    <h2>Author of the Day</h2>
+    <div class="card">
+      <h3 id="authorName">Loading...</h3>
+      <p id="authorBio">Please wait...</p>
+      <p><strong id="authorGenre"></strong></p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>Readify</h3>
+      <p>Your friendly reading platform.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="book-explorer.html">Books</a><br>
+      <a href="progress-tracker.html">Progress Tracker</a>
+    </div>
+
+    <div>
+      <h4>Newsletter</h4>
+      <form id="newsletterForm">
+        <input type="email" id="email" placeholder="Enter email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="newsletterMsg"></p>
+    </div>
+  </div>
+
+  <p class="footer-copy">© <span id="year"></span> Readify</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
