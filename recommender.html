@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Readify - Random Recommender</title>
 
   <meta name="description" content="Pick a random book recommendation by genre and length.">
 
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 
   <!-- Core JS for navigation -->
   <script defer src="js/main.js"></script>
@@ -48,8 +48,7 @@
   <p class="page-subtitle">Choose a genre and length, then let Readify pick a book for you.</p>
 
   <!-- Controls -->
-  <section class="rec-card">
-
+  <div class="rec-card">
     <div class="rec-controls">
 
       <div class="form-row">
@@ -83,16 +82,13 @@
       <p id="recMsg" class="form-msg"></p>
 
     </div>
-
-  </section>
+  </div>
 
   <!-- Recommendation Result -->
   <section class="rec-result" id="resultBox" aria-live="polite">
-
     <h2>Your Recommendation</h2>
 
     <div class="rec-display">
-
       <img id="recImg" class="rec-img" src="images/hero.jpg" alt="Book cover">
 
       <div>
@@ -107,9 +103,7 @@
           <button id="clearListBtn" class="btn" type="button">Clear List</button>
         </div>
       </div>
-
     </div>
-
   </section>
 
   <!-- Reading List -->
