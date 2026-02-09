@@ -18,7 +18,9 @@
     <h2 class="logo">Readify</h2>
 
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </button>
 
     <nav id="mainNav">
@@ -37,6 +39,8 @@
   <p class="page-subtitle">Find books by searching or filtering by genre.</p>
 
   <section class="filters">
+    <h2 class="visually-hidden">Search and Filter Books</h2>
+
     <input type="text" id="searchInput" placeholder="Search by title or author...">
     <select id="genreFilter">
       <option value="all">All Genres</option>
@@ -45,20 +49,30 @@
 
   <p id="bookMsg" class="form-msg"></p>
 
-  <section id="bookGrid" class="book-grid"></section>
+  <section id="bookGrid" class="book-grid">
+    <h2 class="visually-hidden">Book List</h2>
+  </section>
 </main>
 
 <!-- MODAL -->
 <div id="bookModal" class="modal" aria-hidden="true">
   <div class="modal-content" role="dialog" aria-modal="true" aria-label="Book details">
+
     <button id="closeModal" class="close" type="button" aria-label="Close">&times;</button>
 
     <div class="modal-top">
-      <img id="modalImg" alt="Book cover">
+
+      <!-- FIXED: Image now has a valid src attribute -->
+      <img id="modalImg" src="images/placeholder.jpg" alt="Book cover">
+
       <div class="modal-meta">
-        <h2 id="modalTitle"></h2>
+
+        <!-- FIXED: No longer an empty heading -->
+        <h2 id="modalTitle">Book Title</h2>
+
         <p><b>Author:</b> <span id="modalAuthor"></span></p>
         <p><b>Genre:</b> <span id="modalGenre"></span></p>
+
       </div>
     </div>
 
@@ -79,6 +93,7 @@
       </thead>
       <tbody id="modalReviews"></tbody>
     </table>
+
   </div>
 </div>
 
