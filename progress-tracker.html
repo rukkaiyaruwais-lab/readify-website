@@ -37,6 +37,8 @@
   <p class="page-subtitle">Enter your book details to see progress and estimated finish time.</p>
 
   <section class="tracker-card">
+    <h2 class="visually-hidden">Progress Tracker Form</h2>
+
     <form id="progressForm" class="tracker-form">
       <div class="form-row">
         <label for="bookName">Book Name (optional)</label>
@@ -88,7 +90,7 @@
       </div>
     </div>
 
-    <div class="progress-wrap" aria-label="Progress bar">
+    <div class="progress-wrap" role="region" aria-label="Progress bar">
       <div class="progress-bar">
         <div id="progressFill" class="progress-fill"></div>
       </div>
